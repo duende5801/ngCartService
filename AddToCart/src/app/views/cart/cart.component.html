@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row" *ngFor="let product of cartItems">
+        <div class="col">
+            <div class="card" style="width: 18rem;">
+                <img src={{product.img}} class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <input type="text" name="quant[1]" class="form-control input-number" value="" min="1" max="10">
+        </div>
+        <div class="col">
+            <a (click)="removeFromCart(product)" class="btn btn-primary">Remove from Cart</a>
+        </div>
+    </div>
+    <a (click)="removeAll()" class="btn btn-primary">Remove All</a>
+
+</div>
